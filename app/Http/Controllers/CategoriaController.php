@@ -20,14 +20,11 @@ class CategoriaController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $dados = $request->validate([
             'nome' => 'required|string|max:255',
             'descricao' => 'nullable|string',
         ]);
-        Categoria::create([
-            'nome' => $request->nome,
-            'descricao' => $request->descricao,
-        ]);
+        Categoria::create($dados);
 
         return redirect()->route('categorias.index');
     }
@@ -45,15 +42,12 @@ class CategoriaController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $request->validate([
+        $dados = $request->validate([
             'nome' => 'required|string|max:255',
             'descricao' => 'nullable|string',
         ]);
         $categoria = Categoria::findOrFail($id);
-        $categoria->update([
-            'nome' => $request->nome,
-            'descricao' => $request->descricao,
-        ]);
+        $categoria->update($dados);
 
         return redirect()->route('categorias.index');
     }
