@@ -14,10 +14,10 @@
         <h1>tabela categorias</h1>
         <thead>
             <tr>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>Descrição</td>
-                <td>Ações</td>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>

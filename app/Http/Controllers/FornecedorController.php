@@ -23,7 +23,7 @@ class FornecedorController extends Controller
     {
         $dados = $request->validate([
             'nome' => 'required|string|max:255',
-            'telefone' => 'required|string|max:10',
+            'telefone' => 'required|string|max:15',
             'cidade' => 'required|string|max:255',
             'estado' => 'required|string|max:2',
         ]);
@@ -47,7 +47,7 @@ class FornecedorController extends Controller
     {
         $dados = $request->validate([
             'nome' => 'required|string|max:255',
-            'telefone' => 'required|string|max:10',
+            'telefone' => 'required|string|max:15',
             'cidade' => 'required|string|max:255',
             'estado' => 'required|string|max:2',
         ]);
