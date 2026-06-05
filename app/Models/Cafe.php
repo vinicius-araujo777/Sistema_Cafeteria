@@ -6,10 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cafe extends Model
 {
-    protected $fillable = [
-        'categoria_id', 'nome', 'descricao',
-        'torra', 'preco_por_kg', 'estoque_kg'
-    ];
+    protected $fillable = ['categoria_id', 'nome', 'descricao','torra', 'preco_por_kg', 'estoque_kg'];
 
     protected $casts = [
         'preco_por_kg' => 'decimal:2',

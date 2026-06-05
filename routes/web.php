@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\CafeController;
 
 
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias.index');
@@ -19,3 +20,11 @@ Route::post('/fornecedores', [FornecedorController::class, 'store'])->name('forn
 Route::get('/fornecedores/{id}/edit', [FornecedorController::class, 'edit'])->name('fornecedores.edit');
 Route::put('/fornecedores/{id}', [FornecedorController::class, 'update'])->name('fornecedores.update');
 Route::delete('/fornecedores/{id}', [FornecedorController::class, 'destroy'])->name('fornecedores.destroy');
+
+
+Route::get('/cafes', [CafeController::class, 'index'])->name('cafes.index');
+Route::get('/cafes/create', [CafeController::class, 'create'])->name('cafes.create');
+Route::post('/cafes', [CafeController::class, 'store'])->name('cafes.store');
+Route::get('/cafes/{id}/edit', [CafeController::class, 'edit'])->name('cafes.edit');
+Route::put('/cafes/{id}', [CafeController::class, 'update'])->name('cafes.update');
+Route::delete('/cafes/{id}', [CafeController::class, 'destroy'])->name('cafes.destroy');

@@ -3,31 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cafe;
+use App\Models\Categoria;
 
 class CafeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $cafes = Cafe::all();
+        return view('cafes.index', compact('cafes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $categorias = Categoria::all();
+        return view('cafes.create', compact('categorias'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $dados = $request->validate([
+            'categoria_id' => 'required|exists:categorias,id',
+            'nome' => 'required|string|max:255',
+            'descricao' => 'nullable|string',
+            'torra' => 'required|in:clara,media,escura',
+            'preco_por_kg' => 'required|numeric|min:0',
+            'estoque_kg' => 'required|numeric|min:0',
+        ]);
+        Cafe::create($dados);
+
+        return redirect()->route('cafes.index');
     }
 
     /**
@@ -38,27 +43,34 @@ class CafeController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $cafe = Cafe::findOrFail($id);
+        $categorias = Categoria::all();
+        return view('cafes.edit', compact('cafe', 'categorias'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        $dados = $request->validate([
+            'categoria_id' => 'required|exists:categorias,id',
+            'nome' => 'required|string|max:255',
+            'descricao' => 'nullable|string',
+            'torra' => 'required|in:clara,media,escura',
+            'preco_por_kg' => 'required|numeric|min:0',
+            'estoque_kg' => 'required|numeric|min:0',
+        ]);
+        $cafe = Cafe::findOrFail($id);
+        $cafe->update($dados);
+
+        return redirect()->route('cafes.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        $cafe = Cafe::findOrFail($id);
+        $cafe->delete();
+
+        return redirect()->route('cafes.index');
     }
 }
