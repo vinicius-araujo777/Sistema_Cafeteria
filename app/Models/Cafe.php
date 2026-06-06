@@ -10,7 +10,7 @@ class Cafe extends Model
 
     protected $casts = [
         'preco_por_kg' => 'decimal:2',
-        'estoque_kg'   => 'decimal:3',
+        'estoque_kg'   => 'decimal:2',
     ];
 
     public function categoria()

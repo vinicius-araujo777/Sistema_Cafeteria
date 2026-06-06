@@ -1,56 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-</head>
-<body>
-    <h1>Adicionar Cafe</h1>
+@extends('layouts.app')
 
-    <form action="{{route('cafes.store')}}" method="post">
-        @csrf
-        <div>
-            <label for="categoria_id">Categoria:</label>
-            <select name="categoria_id" id="categoria_id" required>
-                <option value="">Selecione uma categoria</option>
-                @foreach ($categorias as $categoria)
-                    <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
-                @endforeach
-            </select>
+@section('content')
+<div class="py-6">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
+
+            <h1 class="text-2xl font-semibold text-gray-800 mb-6">Adicionar Café</h1>
+
+            <form action="{{ route('cafes.store') }}" method="POST" class="space-y-4">
+                @csrf
+                <div>
+                    <label for="categoria_id" class="block text-sm font-medium text-gray-700">Categoria</label>
+                    <select name="categoria_id" id="categoria_id" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="">Selecione uma categoria</option>
+                        @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+                    <input type="text" name="nome" id="nome" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="descricao" class="block text-sm font-medium text-gray-700">Descrição</label>
+                    <input type="text" name="descricao" id="descricao"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="torra" class="block text-sm font-medium text-gray-700">Torra</label>
+                    <select name="torra" id="torra" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        <option value="clara">Clara</option>
+                        <option value="media">Média</option>
+                        <option value="escura">Escura</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="preco_por_kg" class="block text-sm font-medium text-gray-700">Preço por kg</label>
+                    <input type="number" name="preco_por_kg" id="preco_por_kg" step="0.01" min="0" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="estoque_kg" class="block text-sm font-medium text-gray-700">Estoque (kg)</label>
+                    <input type="number" name="estoque_kg" id="estoque_kg" step="0.01" min="0" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                <div class="flex gap-3">
+                    <button type="submit"
+                            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Adicionar Café
+                    </button>
+                    <a href="{{ route('cafes.index') }}"
+                        class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+
         </div>
-
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" required>
-        </div>
-
-        <div>
-            <label for="descricao">Descrição:</label>
-            <input type="text" name="descricao" id="descricao">
-        </div>
-
-        <div>
-            <label for="torra">Torra:</label>
-            <select name="torra" id="torra" required>
-                <option value="clara">Clara</option>
-                <option value="media">Média</option>
-                <option value="escura">Escura</option>
-            </select>
-        </div>
-
-        <div>
-            <label for="preco_por_kg">Preço por kg:</label>
-            <input type="number" name="preco_por_kg" id="preco_por_kg" step="0.01" min="0" required>
-        </div>
-
-        <div>
-            <label for="estoque_kg">Estoque (kg):</label>
-            <input type="number" name="estoque_kg" id="estoque_kg" step="0.01" min="0" required>
-        </div>
-
-        <button type="submit">Adicionar Cafe</button>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+@endsection

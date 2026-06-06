@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('descricao')->nullable();
             $table->enum('torra', ['clara', 'media', 'escura']);
             $table->decimal('preco_por_kg', 8, 2);
-            $table->decimal('estoque_kg', 8, 3)->default(0);
+            $table->decimal('estoque_kg', 8, 2)->default(0);
             $table->timestamps();
         });
     }
