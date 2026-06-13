@@ -29,7 +29,7 @@ class FornecedorController extends Controller
         ]);
         Fornecedor::create($dados);
 
-        return redirect()->route('fornecedores.index');
+        return redirect()->route('fornecedores.index')->with('success', 'Fornecedor criado com sucesso!');
     }
 
     public function show(string $id)
@@ -54,7 +54,7 @@ class FornecedorController extends Controller
         $fornecedor = Fornecedor::findOrFail($id);
         $fornecedor->update($dados);
 
-        return redirect()->route('fornecedores.index');
+        return redirect()->route('fornecedores.index')->with('success', 'Fornecedor atualizado com sucesso!');
     }
 
     public function destroy(string $id)

@@ -32,7 +32,7 @@ class CafeController extends Controller
         ]);
         Cafe::create($dados);
 
-        return redirect()->route('cafes.index');
+        return redirect()->route('cafes.index')->with('success', 'Café cadastrado com sucesso!');;
     }
 
     /**
@@ -63,7 +63,7 @@ class CafeController extends Controller
         $cafe = Cafe::findOrFail($id);
         $cafe->update($dados);
 
-        return redirect()->route('cafes.index');
+        return redirect()->route('cafes.index')->with('success', 'Café atualizado com sucesso!');
     }
 
     public function destroy(string $id)

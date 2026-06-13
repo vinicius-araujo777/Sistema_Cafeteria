@@ -26,7 +26,7 @@ class CategoriaController extends Controller
         ]);
         Categoria::create($dados);
 
-        return redirect()->route('categorias.index');
+        return redirect()->route('categorias.index')->with('success', 'Categoria criada com sucesso!');
     }
 
     public function show(string $id)
@@ -49,7 +49,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::findOrFail($id);
         $categoria->update($dados);
 
-        return redirect()->route('categorias.index');
+        return redirect()->route('categorias.index')->with('success', 'Categoria atualizada com sucesso!');
     }
 
     public function destroy(string $id)
