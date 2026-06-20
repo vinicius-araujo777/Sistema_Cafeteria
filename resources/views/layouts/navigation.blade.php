@@ -1,59 +1,88 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
+<nav x-data="{ open: false }" class="bg-[#1C1008] border-b border-[#3D2010]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
+        <div class="grid grid-cols-[auto_1fr_auto] sm:grid-cols-3 items-center h-16 gap-4">
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        Dashboard
-                    </x-nav-link>
-                    <x-nav-link :href="route('cafes.index')" :active="request()->routeIs('cafes.*')">
-                        Cafés
-                    </x-nav-link>
-                    <x-nav-link :href="route('fornecedores.index')" :active="request()->routeIs('fornecedores.*')">
-                        Fornecedores
-                    </x-nav-link>
-                    <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')">
-                        Categorias
-                    </x-nav-link>
+            <a href="{{ route('dashboard') }}" class="flex items-center gap-2 shrink-0 justify-self-start">
+                <div class="w-9 h-9 bg-[#B5642A] rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#FDF9F3]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    </svg>
                 </div>
+                <span class="text-[#E8D5B0] text-sm font-semibold tracking-wide hidden sm:block">Café Manager</span>
+            </a>
+
+            <div class="hidden sm:flex items-center justify-center gap-1">
+                <a href="{{ route('dashboard') }}"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150
+                        {{ request()->routeIs('dashboard')
+                            ? 'bg-[#B5642A]/20 text-[#C89B5A] border border-[#B5642A]/35'
+                            : 'text-[#E8D5B0]/60 border border-transparent hover:text-[#E8D5B0] hover:bg-white/5' }}">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    Dashboard
+                </a>
+
+                <a href="{{ route('cafes.index') }}"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150
+                        {{ request()->routeIs('cafes.*')
+                            ? 'bg-[#B5642A]/20 text-[#C89B5A] border border-[#B5642A]/35'
+                            : 'text-[#E8D5B0]/60 border border-transparent hover:text-[#E8D5B0] hover:bg-white/5' }}">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    </svg>
+                    Cafés
+                </a>
+
+                <a href="{{ route('categorias.index') }}"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150
+                        {{ request()->routeIs('categorias.*')
+                            ? 'bg-[#B5642A]/20 text-[#C89B5A] border border-[#B5642A]/35'
+                            : 'text-[#E8D5B0]/60 border border-transparent hover:text-[#E8D5B0] hover:bg-white/5' }}">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                        <line x1="7" y1="7" x2="7.01" y2="7"/>
+                    </svg>
+                    Categorias
+                </a>
+
+                <a href="{{ route('fornecedores.index') }}"
+                    class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150
+                        {{ request()->routeIs('fornecedores.*')
+                            ? 'bg-[#B5642A]/20 text-[#C89B5A] border border-[#B5642A]/35'
+                            : 'text-[#E8D5B0]/60 border border-transparent hover:text-[#E8D5B0] hover:bg-white/5' }}">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"/>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                        <circle cx="5.5" cy="18.5" r="2.5"/>
+                        <circle cx="18.5" cy="18.5" r="2.5"/>
+                    </svg>
+                    Fornecedores
+                </a>
             </div>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <div class="hidden sm:flex items-center justify-self-end">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
+                        <button class="flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#C89B5A]/25 bg-[#B5642A]/10 text-[#C89B5A] text-sm font-medium hover:bg-[#B5642A]/20 transition-all duration-150">
+                            <div class="w-6 h-6 rounded-full bg-[#3D2010] flex items-center justify-center text-[11px] font-semibold text-[#C89B5A]">
+                                {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                             </div>
+                            <span>{{ Auth::user()->name }}</span>
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6"/>
+                            </svg>
                         </button>
                     </x-slot>
-
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Perfil') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
+                        <x-dropdown-link :href="route('profile.edit')">{{ __('Perfil') }}</x-dropdown-link>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                this.closest('form').submit();">
+                                onclick="event.preventDefault(); this.closest('form').submit();">
                                 {{ __('Sair') }}
                             </x-dropdown-link>
                         </form>
@@ -61,56 +90,33 @@
                 </x-dropdown>
             </div>
 
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <div class="flex items-center justify-self-end sm:hidden">
+                <button @click="open = !open" class="p-2 rounded-md text-[#E8D5B0]/60 hover:text-[#E8D5B0] hover:bg-white/5 transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{'hidden': open, 'inline-flex': !open}" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path :class="{'hidden': !open, 'inline-flex': open}" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('cafes.index')" :active="request()->routeIs('cafes.*')">
-                {{ __('Cafés') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('fornecedores.index')" :active="request()->routeIs('fornecedores.*')">
-                {{ __('Fornecedores') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')">
-                {{ __('Categorias') }}
-            </x-responsive-nav-link>
+    <div :class="{'block': open, 'hidden': !open}" class="hidden sm:hidden border-t border-white/5">
+        <div class="pt-2 pb-3 space-y-1 px-4">
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">Dashboard</x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('cafes.index')" :active="request()->routeIs('cafes.*')">Cafés</x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.*')">Categorias</x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('fornecedores.index')" :active="request()->routeIs('fornecedores.*')">Fornecedores</x-responsive-nav-link>
         </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
+        <div class="pt-4 pb-3 border-t border-white/5 px-4">
+            <div class="text-[#E8D5B0] font-medium text-sm">{{ Auth::user()->name }}</div>
+            <div class="text-[#C89B5A]/50 text-xs mt-0.5">{{ Auth::user()->email }}</div>
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Perfil') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
+                <x-responsive-nav-link :href="route('profile.edit')">Perfil</x-responsive-nav-link>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
-                        onclick="event.preventDefault();
-                        this.closest('form').submit();">
-                        {{ __('Sair') }}
-                    </x-responsive-nav-link>
+                        onclick="event.preventDefault(); this.closest('form').submit();">Sair</x-responsive-nav-link>
                 </form>
             </div>
         </div>

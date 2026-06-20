@@ -9,7 +9,7 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-        $categorias = Categoria::all();
+        $categorias = Categoria::withCount('cafes')->get();
         return view('categorias.index', compact('categorias'));
     }
 
