@@ -13,6 +13,18 @@ services:
     depends_on:
       - db
 
+  vite:
+    image: node:20-alpine
+    container_name: cafeteria_vite
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/node_modules
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
   db:
     image: mysql:8.0
     container_name: cafeteria_db
