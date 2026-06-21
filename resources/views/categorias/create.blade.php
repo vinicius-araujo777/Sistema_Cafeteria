@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-[#F5EFE0] py-8">
+<div class="min-h-screen bg-[#E8DFD3] py-8">
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex items-center gap-1.5 text-sm text-[#A08060] mb-5">
             <a href="{{ route('categorias.index') }}" class="hover:text-[#B5642A] transition-colors">Categorias</a>
@@ -23,7 +23,6 @@
                             Nome da Categoria
                         </label>
                         <input type="text" name="nome" id="nome"
-                            value="{{ old('nome') }}"
                             placeholder="Ex: Espresso, Cold Brew, Especiais..."
                             class="w-full px-3 py-2.5 rounded-lg border text-sm text-[#1C1008] bg-[#FDF9F3] placeholder-[#C0A880] focus:outline-none focus:ring-2 focus:ring-[#B5642A]/30 focus:border-[#B5642A] transition-all
                             {{ $errors->has('nome') ? 'border-red-300' : 'border-[#D4C4A0]' }}"
@@ -38,7 +37,6 @@
                             Descrição <span class="normal-case font-normal text-[#B0906A]">(opcional)</span>
                         </label>
                         <input type="text" name="descricao" id="descricao"
-                            value="{{ old('descricao') }}"
                             placeholder="Ex: Cafés extraídos sob pressão, sabor intenso"
                             class="w-full px-3 py-2.5 rounded-lg border border-[#D4C4A0] text-sm text-[#1C1008] bg-[#FDF9F3] placeholder-[#C0A880] focus:outline-none focus:ring-2 focus:ring-[#B5642A]/30 focus:border-[#B5642A] transition-all">
                         @error('descricao')

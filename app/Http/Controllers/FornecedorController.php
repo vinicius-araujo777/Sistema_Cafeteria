@@ -21,11 +21,12 @@ class FornecedorController extends Controller
 
     public function store(Request $request)
     {
+        $request->merge(['estado' => strtoupper($request->estado)]);
         $dados = $request->validate([
             'nome' => 'required|string|max:255',
-            'telefone' => 'required|string|max:15',
-            'cidade' => 'required|string|max:255',
-            'estado' => 'required|string|max:2',
+            'telefone' => 'required|string|digits_between:10,11|max:15',
+            'cidade' => 'required|string|alpha|max:255',
+            'estado' => 'required|string|alpha|size:2',
         ]);
         Fornecedor::create($dados);
 
@@ -44,12 +45,13 @@ class FornecedorController extends Controller
     }
 
     public function update(Request $request, string $id)
-    {
+    {  
+        $request->merge(['estado' => strtoupper($request->estado)]);
         $dados = $request->validate([
             'nome' => 'required|string|max:255',
-            'telefone' => 'required|string|max:15',
-            'cidade' => 'required|string|max:255',
-            'estado' => 'required|string|max:2',
+            'telefone' => 'required|string|digits_between:10,11|max:15',
+            'cidade' => 'required|string|alpha|max:255',
+            'estado' => 'required|string|alpha|size:2',
         ]);
         $fornecedor = Fornecedor::findOrFail($id);
         $fornecedor->update($dados);

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen bg-[#F5EFE0] py-8">
+<div class="min-h-screen bg-[#E8DFD3] py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         @if(session('success'))
