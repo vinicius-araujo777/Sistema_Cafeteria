@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
+const isCodespaces = !!process.env.CODESPACE_NAME;
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -12,9 +14,22 @@ export default defineConfig({
         host: '0.0.0.0',
         port: 5173,
         strictPort: true,
-        hmr: {
-            host: 'localhost',
-        },
+        cors: isCodespaces,
+
+        ...(isCodespaces
+            ? {
+                  origin: `https://${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
+                  hmr: {
+                      host: `${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
+                      clientPort: 443,
+                  },
+              }
+            : {
+                  hmr: {
+                      host: 'localhost',
+                  },
+              }),
+
         watch: {
             usePolling: true,
         },
