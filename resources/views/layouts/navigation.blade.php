@@ -9,10 +9,10 @@
                         <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
                     </svg>
                 </div>
-                <span class="text-[#E8D5B0] text-sm font-semibold tracking-wide hidden sm:block">Café Manager</span>
+                <span class="text-[#E8D5B0] text-sm font-semibold tracking-wide hidden sm:block">Rota do Café</span>
             </a>
 
-            <div class="hidden sm:flex items-center justify-center gap-1">
+            <div class="hidden sm:flex items-center justify-center gap-2">
                 <a href="{{ route('dashboard') }}"
                     class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-150
                         {{ request()->routeIs('dashboard')

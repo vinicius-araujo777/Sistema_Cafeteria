@@ -7,7 +7,7 @@
         {{-- Header --}}
         <div>
             <h1 class="text-2xl font-semibold text-[#1C1008]" style="font-family: Georgia, serif;">Dashboard</h1>
-            <p class="text-sm text-[#A08060] mt-1">Bem-vindo, {{ Auth::user()->name }}. Aqui está o resumo do sistema.</p>
+            <p class="text-sm text-[#A08060] mt-1">Bem-vindo, {{ Auth::user()->name }}! Acompanhe o panorama geral da gestão de cafés.</p>
         </div>
 
         {{-- Cards de resumo --}}

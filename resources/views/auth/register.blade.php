@@ -9,7 +9,7 @@
                 <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
             </svg>
         </div>
-        <h1 class="text-2xl font-semibold text-[#1C1008]" style="font-family: Georgia, serif;">Café Manager</h1>
+        <h1 class="text-2xl font-semibold text-[#1C1008]" style="font-family: Georgia, serif;">Rota do Café</h1>
         <p class="text-sm text-[#A08060] mt-1">Sistema de Gestão de Cafeteria</p>
     </div>
 
