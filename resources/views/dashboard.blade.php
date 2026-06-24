@@ -27,7 +27,7 @@
                 <div class="px-5 py-4">
                     <p class="text-3xl font-bold text-[#1C1008]">{{ $totalCafes }}</p>
                     <a href="{{ route('cafes.index') }}"
-                       class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
+                        class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
                         Ver todos
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
@@ -48,7 +48,7 @@
                 <div class="px-5 py-4">
                     <p class="text-3xl font-bold text-[#1C1008]">{{ $totalCategorias }}</p>
                     <a href="{{ route('categorias.index') }}"
-                       class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
+                        class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
                         Ver todas
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
@@ -71,7 +71,7 @@
                 <div class="px-5 py-4">
                     <p class="text-3xl font-bold text-[#1C1008]">{{ $totalFornecedores }}</p>
                     <a href="{{ route('fornecedores.index') }}"
-                       class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
+                        class="inline-flex items-center gap-1 text-xs text-[#B5642A] hover:text-[#5C3317] mt-2 transition-colors">
                         Ver todos
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
@@ -89,7 +89,7 @@
                     <p class="text-xs text-[#A08060] mt-0.5">Os 5 cafés adicionados mais recentemente</p>
                 </div>
                 <a href="{{ route('cafes.index') }}"
-                   class="flex items-center gap-1.5 text-xs font-medium text-[#B5642A] hover:text-[#5C3317] border border-[#C89B5A]/30 bg-[#C89B5A]/10 hover:bg-[#C89B5A]/20 px-3 py-1.5 rounded-lg transition-all">
+                    class="flex items-center gap-1.5 text-xs font-medium text-[#B5642A] hover:text-[#5C3317] border border-[#C89B5A]/30 bg-[#C89B5A]/10 hover:bg-[#C89B5A]/20 px-3 py-1.5 rounded-lg transition-all">
                     Ver catálogo completo
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                 </a>

@@ -18,17 +18,17 @@ export default defineConfig({
 
         ...(isCodespaces
             ? {
-                  origin: `https://${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
-                  hmr: {
-                      host: `${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
-                      clientPort: 443,
-                  },
-              }
+                origin: `https://${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
+                hmr: {
+                    host: `${process.env.CODESPACE_NAME}-5173.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`,
+                    clientPort: 443,
+                },
+            }
             : {
-                  hmr: {
-                      host: 'localhost',
-                  },
-              }),
+                hmr: {
+                    host: 'localhost',
+                },
+            }),
 
         watch: {
             usePolling: true,

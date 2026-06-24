@@ -3,13 +3,7 @@
 
     {{-- Logo --}}
     <div class="flex flex-col items-center mb-8">
-        <div class="w-14 h-14 bg-[#B5642A] rounded-2xl flex items-center justify-center mb-4 shadow-md">
-            <svg class="w-8 h-8 text-[#FDF9F3]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
-                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
-            </svg>
-        </div>
-        <h1 class="text-2xl font-semibold text-[#1C1008]" style="font-family: Georgia, serif;">Rota do Café</h1>
+        <img src="{{ asset('images/logoLogin.png') }}" alt="Rota do Café" class="h-28 object-contain">
         <p class="text-sm text-[#A08060] mt-1">Sistema de Gestão de Cafeteria</p>
     </div>
 

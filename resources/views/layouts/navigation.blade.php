@@ -1,15 +1,9 @@
 <nav x-data="{ open: false }" class="bg-[#1C1008] border-b border-[#3D2010]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-[auto_1fr_auto] sm:grid-cols-3 items-center h-16 gap-4">
+        <div class="grid grid-cols-[auto_1fr_auto] sm:grid-cols-3 items-center h-20 gap-4">
 
             <a href="{{ route('dashboard') }}" class="flex items-center gap-2 shrink-0 justify-self-start">
-                <div class="w-9 h-9 bg-[#B5642A] rounded-lg flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#FDF9F3]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
-                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
-                    </svg>
-                </div>
-                <span class="text-[#E8D5B0] text-sm font-semibold tracking-wide hidden sm:block">Rota do Café</span>
+                <img src="{{ asset('images/logoDashboard.png') }}" alt="Rota do Café" class="h-16 object-contain">
             </a>
 
             <div class="hidden sm:flex items-center justify-center gap-2">
