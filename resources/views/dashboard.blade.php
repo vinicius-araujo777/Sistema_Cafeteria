@@ -116,8 +116,8 @@
                                 </td>
 
                                 <td class="px-4 py-3 text-center">
-                                    <div class="flex items-center justify-center gap-2.5">
-                                        <div class="w-8 h-8 rounded-lg bg-[#C89B5A]/15 border border-[#E2D4B8] flex items-center justify-center shrink-0">
+                                    <div class="flex items-center pl-8 gap-2.5">
+                                        <div class="w-9 h-9 rounded-lg bg-[#C89B5A]/15 border border-[#E2D4B8] flex items-center justify-center shrink-0">
                                             <svg class="w-4 h-4 text-[#B5642A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                                 <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
                                                 <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
@@ -126,7 +126,7 @@
                                         <div class="text-left">
                                             <p class="text-sm font-medium text-[#1C1008]">{{ $cafe->nome }}</p>
                                             @if($cafe->descricao)
-                                                <p class="text-xs text-[#A08060] max-w-[180px] truncate">{{ $cafe->descricao }}</p>
+                                                <p class="text-xs text-[#A08060] mt-0.5 max-w-[200px] truncate">{{ $cafe->descricao }}</p>
                                             @endif
                                         </div>
                                     </div>

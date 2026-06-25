@@ -3,7 +3,7 @@
         <div class="grid grid-cols-[auto_1fr_auto] sm:grid-cols-3 items-center h-20 gap-4">
 
             <a href="{{ route('dashboard') }}" class="flex items-center gap-2 shrink-0 justify-self-start">
-                <img src="{{ asset('images/logoDashboard.png') }}" alt="Rota do Café" class="h-16 object-contain">
+                <img src="{{ asset('images/LogoDashboard.png') }}" alt="Rota do Café" class="h-16 object-contain">
             </a>
 
             <div class="hidden sm:flex items-center justify-center gap-2">

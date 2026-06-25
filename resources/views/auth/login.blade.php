@@ -4,7 +4,7 @@
     {{-- Logo --}}
     <div class="flex flex-col items-center mb-8">
         <img src="{{ asset('images/logoLogin.png') }}" alt="Rota do Café" class="h-28 object-contain">
-        <p class="text-sm text-[#A08060] mt-1">Sistema de Gestão de Cafeteria</p>
+        <p class="text-sm text-[#A08060] mt-1">Sistema de Gestão de Cafés</p>
     </div>
 
     {{-- Card --}}
