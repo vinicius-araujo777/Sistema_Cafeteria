@@ -64,6 +64,6 @@ class FornecedorController extends Controller
         $fornecedor = Fornecedor::findOrFail($id);
         $fornecedor->delete();
 
-        return redirect()->route('fornecedores.index');
+        return redirect()->route('fornecedores.index')->with('success', 'Fornecedor excluído com sucesso!');
     }
 }

@@ -71,6 +71,6 @@ class CafeController extends Controller
         $cafe = Cafe::findOrFail($id);
         $cafe->delete();
 
-        return redirect()->route('cafes.index');
+        return redirect()->route('cafes.index')->with('success', 'Café excluído com sucesso!');
     }
 }
