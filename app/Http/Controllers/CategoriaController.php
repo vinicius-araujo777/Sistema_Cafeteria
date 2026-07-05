@@ -55,6 +55,9 @@ class CategoriaController extends Controller
     public function destroy(string $id)
     {
         $categoria = Categoria::findOrFail($id);
+        if ($categoria->cafes()->count() > 0) {
+            return redirect()->route('categorias.index')->with('error', 'Não é possível excluir esta categoria pois ela possui cafés vinculados.');
+        }
         $categoria->delete();
 
         return redirect()->route('categorias.index')->with('success', 'Categoria excluída com sucesso!');

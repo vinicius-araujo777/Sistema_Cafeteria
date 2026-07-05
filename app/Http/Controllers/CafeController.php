@@ -35,9 +35,6 @@ class CafeController extends Controller
         return redirect()->route('cafes.index')->with('success', 'Café cadastrado com sucesso!');;
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
